@@ -15,6 +15,7 @@ def contact_view(request, *args, **kwargs):
 def about_view(request, *args, **kwargs):
     my_context = {
         "my_text": "abc this is about us",
+        "this_is_true": True,
         "my_number": 123,
         "my_list": [123, 4345, 55565, "Abc"]
     }
@@ -23,4 +24,4 @@ def about_view(request, *args, **kwargs):
 
 
 def social_view(request, *args, **kwargs):
-    return HttpResponse("<h1>Socail Page</h1>")
+    return HttpResponse("<h1>Social Page</h1>")
