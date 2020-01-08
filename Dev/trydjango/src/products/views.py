@@ -5,12 +5,12 @@ from .models import Product
 # Create your views here.
 
 def product_create_view(request):
-    my_form = RawProductForm(request.GET)
+    my_form = RawProductForm()
     if request.method == "POST":
         my_form = RawProductForm(request.POST)
         if my_form.is_valid():
             print(my_form.cleaned_data)
-            Product.objects.create(self.cleaned_data)
+            Product.objects.create(**my_form.cleaned_data)
         else:
             print(my_form.errors)
     context = {
